@@ -30,18 +30,47 @@ ssh into the pfsense device (e.g. ssh admin@10.1.1.1). select option 8 for conso
     cp ./filebeat_service.sh /usr/local/etc/rc.d/filebeat.sh
     echo "filebeat_enable=YES" >> /etc/rc.conf.local
     
+    
 #### Configuration
 
-Customize your filebeat.yml file with your Elatic Stack authentication details.
+Customize the filebeat.yml file with the Elatic Stack authentication details.
 
     vi /usr/local/etc/filebeat.yml 
     
+    # The kibana and elasticsearch sections...
     output.elasticsearch:
       hosts: ['https://yourElasticIp.com:9200']
       ssl.verification_mode: "none"
       username: elastic
       password: "censored#ChangeToYours"
       pipeline: geoip-info
+      
+      
+Test the configuration and output.
+
+    #$ filebeat -path.home /var/db/beats/filebeat -path.config /usr/local/etc test config
+    
+    results:
+    Config OK
+    
+    #$ filebeat -path.home /var/db/beats/filebeat -path.config /usr/local/etc test output
+    
+    results:
+    elasticsearch: https://10.3.3.102:30036...
+      parse url... OK
+      connection...
+        parse host... OK
+        dns lookup... OK
+        addresses: 10.3.3.102
+        dial up... OK
+      TLS...
+        security... WARN server's certificate chain verification is disabled
+        handshake... OK
+        TLS version: TLSv1.3
+        dial up... OK
+      talk to server... OK
+      version: 7.15.0
+
 
 
 
