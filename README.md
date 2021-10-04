@@ -4,7 +4,7 @@ pfsense / freebsd binaries and configuration files for using the pfsense as an n
 WARNING: Please take a config snapshot of your pfsense configuration and make sure you can use it before proceeding.
 
 
-#### Prequisites
+#### Prerequisites
 * A pfsense device
 * ssh and web admin console access to the pfsense.
 * An Elastic Stack ([cloud](https://cloud.elastic.co/) or self hosted) instance that can be reached by the pfsense.
@@ -17,7 +17,7 @@ Download this project as a zip file.
 
 Upload it to pfsense by navigating to Diagnostics->Command Prompt->Upload file in the pfsense admin console.
 
-ssh into the pfsense device. Then execute:
+ssh into the pfsense device (e.g. ssh admin@10.1.1.1). select option 8 for console access. Then execute:
 
     cd /tmp
     unzip bsd-amd64-filebeat-main.zip
@@ -30,7 +30,9 @@ ssh into the pfsense device. Then execute:
     cp ./filebeat_service.sh /usr/local/etc/rc.d/filebeat.sh
     echo "filebeat_enable=YES" >> /etc/rc.conf.local
     
- Customize your filebeat.yml file with your Elatic Stack authentication details.
+#### Configuration
+
+Customize your filebeat.yml file with your Elatic Stack authentication details.
 
     vi /usr/local/etc/filebeat.yml 
     
