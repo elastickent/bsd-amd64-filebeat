@@ -1,5 +1,5 @@
 # bsd-amd64-filebeat
-pfsense / freebsd binaries and configuration files for using the pfsense as an network sensor for the Elastic Stack. 
+pfsense / freebsd amd64 prebuilt binaries and configuration files for using the pfsense as an network sensor for the Elastic Stack. 
 
 WARNING: Please take a config snapshot of your pfsense configuration and make sure you can use it before proceeding.
 
