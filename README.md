@@ -78,7 +78,7 @@ Run the setup command.
     
  Start the service.
  
-   service filebeat start
+    service filebeat start
    
 
 In Kibana->Security->Overview filebeat network events should appear.
