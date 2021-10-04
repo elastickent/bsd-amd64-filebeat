@@ -71,6 +71,19 @@ Test the configuration and output.
       talk to server... OK
       version: 7.15.0
 
+Run the setup command.
+
+    #$ filebeat -path.home /var/db/beats/filebeat -path.config /usr/local/etc setup
+    
+    
+ Start the service.
+ 
+   service filebeat start
+   
+
+In Kibana->Security->Overview filebeat network events should appear.
+
+
 
 
 
