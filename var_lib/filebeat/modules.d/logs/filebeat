@@ -1,0 +1,11 @@
+2021-03-17T09:38:45.742-0500	INFO	instance/beat.go:660	Home path: [/var/db/beats/filebeat/modules.d] Config path: [/var/db/beats/filebeat/modules.d] Data path: [/var/db/beats/filebeat/modules.d/data] Logs path: [/var/db/beats/filebeat/modules.d/logs]
+2021-03-17T09:38:45.744-0500	INFO	instance/beat.go:668	Beat ID: 07eaa08e-ed31-49b7-8b1a-81adb8f709c3
+2021-03-17T09:38:45.744-0500	INFO	[beat]	instance/beat.go:996	Beat info	{"system_info": {"beat": {"path": {"config": "/var/db/beats/filebeat/modules.d", "data": "/var/db/beats/filebeat/modules.d/data", "home": "/var/db/beats/filebeat/modules.d", "logs": "/var/db/beats/filebeat/modules.d/logs"}, "type": "filebeat", "uuid": "07eaa08e-ed31-49b7-8b1a-81adb8f709c3"}}}
+2021-03-17T09:38:45.744-0500	INFO	[beat]	instance/beat.go:1005	Build info	{"system_info": {"build": {"commit": "unknown", "libbeat": "7.11.1", "time": "1754-08-30T22:43:41.128Z", "version": "7.11.1"}}}
+2021-03-17T09:38:45.744-0500	INFO	[beat]	instance/beat.go:1008	Go runtime info	{"system_info": {"go": {"os":"freebsd","arch":"amd64","max_procs":4,"version":"go1.15.5"}}}
+2021-03-17T09:38:45.744-0500	INFO	instance/beat.go:304	Setup Beat: filebeat; Version: 7.11.1
+2021-03-17T09:38:45.745-0500	INFO	[index-management]	idxmgmt/std.go:184	Set output.elasticsearch.index to 'filebeat-7.11.1' as ILM is enabled.
+2021-03-17T09:38:45.745-0500	INFO	eslegclient/connection.go:99	elasticsearch url: https://10.3.3.102:30036
+2021-03-17T09:38:45.745-0500	WARN	[tls]	tlscommon/tls_config.go:93	SSL/TLS verifications disabled.
+2021-03-17T09:38:45.746-0500	INFO	[publisher]	pipeline/module.go:113	Beat name: home-edge-01.localdomain
+2021-03-17T09:38:45.746-0500	ERROR	fileset/modules.go:127	Not loading modules. Module directory not found: /var/db/beats/filebeat/modules.d/module

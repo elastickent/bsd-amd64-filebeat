@@ -1,0 +1,33 @@
+filebeat.inputs:
+- type: log
+  paths:
+    - "/var/syslog-ng/default.log"
+  fields_under_root: true
+  fields:
+    tags: ["pfsense"]
+
+filebeat.config.modules:
+  enabled: true
+  path: /var/db/beats/filebeat/modules.d/*.yml
+
+processors:
+  - add_host_metadata: ~
+
+logging.to_syslog: false
+logging.metrics.enabled: false
+#logging.level: debug
+
+setup.kibana:
+  host: https://10.3.3.102:30037
+  username: "elastic"
+  password: ""
+  ssl.verification_mode: "none"
+
+#output.console:
+#  pretty: true
+output.elasticsearch:
+  hosts: ['https://10.3.3.102:30036']
+  ssl.verification_mode: "none"
+  username: elastic
+  password: ""
+  pipeline: geoip-info
